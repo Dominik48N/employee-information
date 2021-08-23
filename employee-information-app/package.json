@@ -1,0 +1,26 @@
+{
+  "name": "employee-information-app",
+  "version": "1.0.0",
+  "description": "The desktop app for employee-information\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[\u001b[-",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dominik48N/employee-information.git"
+  },
+  "author": "Dominik",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Dominik48N/employee-information/issues"
+  },
+  "homepage": "https://github.com/Dominik48N/employee-information#readme",
+  "devDependencies": {
+    "electron": "^13.2.1"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  }
+}
