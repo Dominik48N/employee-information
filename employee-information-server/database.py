@@ -3,22 +3,28 @@ import config
 
 
 def execute_sql(sql):
+    global db
     try:
-        cursor.execute(sql)
+        db = connect_database()
+        db.cursor().execute(sql)
         db.commit()
-    except:
-        db.rollback()
+    finally:
+        db.close()
 
 
 def fetch_sql(sql):
+    global db
     try:
+        db = connect_database()
+        cursor = db.cursor()
         cursor.execute(sql)
         results = cursor.fetchall()
 
         return results
     except:
-
         print("Error: unable to fetch data")
+    finally:
+        db.close()
 
 
 def disconnect_mysql():
@@ -43,12 +49,14 @@ def create_tables():
     execute_sql("CREATE TABLE IF NOT EXISTS log(`type` VARCHAR(128), `note` TEXT, `date` VARCHAR(256));")
 
 
-db = pymysql.connect(
-    host=config.mysql["host"],
-    user=config.mysql["user"],
-    password=config.mysql["password"],
-    database=config.mysql["database"],
-    port=3306
-)
-cursor = db.cursor()
+def connect_database():
+    return pymysql.connect(
+        host=config.mysql["host"],
+        user=config.mysql["user"],
+        password=config.mysql["password"],
+        database=config.mysql["database"],
+        port=3306
+    )
+
+
 create_tables()
