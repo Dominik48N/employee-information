@@ -45,8 +45,13 @@ def create_tables():
                 "`joined_at` VARCHAR(256), "
                 "`state` INT(1)"
                 ");")
+    execute_sql("CREATE TABLE IF NOT EXISTS log("
+                "`type` VARCHAR(128), "
+                "`note` TEXT, "
+                "`date` VARCHAR(256), "
+                "`user` VARCHAR(36)"
+                ");")
     execute_sql("CREATE TABLE IF NOT EXISTS users(`name` VARCHAR(36), `rank` INT(2));")
-    execute_sql("CREATE TABLE IF NOT EXISTS log(`type` VARCHAR(128), `note` TEXT, `date` VARCHAR(256));")
 
 
 def connect_database():
