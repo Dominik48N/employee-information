@@ -1,7 +1,7 @@
 # MySQL Database connection data
 mysql = {
-    "host": "mysql-host",
-    "user": "employee-information",
-    "password": "mysql-password",
+    "host": "127.0.0.1",
+    "user": "root",
+    "password": "",
     "database": "employee-information",
 }
