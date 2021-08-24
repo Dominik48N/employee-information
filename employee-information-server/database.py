@@ -51,7 +51,7 @@ def create_tables():
                 "`date` VARCHAR(256), "
                 "`user` VARCHAR(36)"
                 ");")
-    execute_sql("CREATE TABLE IF NOT EXISTS users(`name` VARCHAR(36), `rank` INT(2));")
+    execute_sql("CREATE TABLE IF NOT EXISTS users(`name` VARCHAR(36), `password` TEXT, `rank` INT(2));")
 
 
 def connect_database():
